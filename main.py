@@ -2,6 +2,7 @@ import logging
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 #Para menu dropdown
+#para probar by cirley.
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
 import time
