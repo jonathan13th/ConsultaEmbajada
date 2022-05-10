@@ -26,3 +26,4 @@ time.sleep(2)
 driver.refresh()
 time.sleep(2)
 driver.find_element(by=By.ID, value='appointments_consulate_appointment_date').click()
+
