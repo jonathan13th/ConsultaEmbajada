@@ -27,4 +27,8 @@ time.sleep(2)
 driver.refresh()
 time.sleep(2)
 driver.find_element(by=By.ID, value='appointments_consulate_appointment_date').click()
+btn2='/html/body/div[5]/div[2]/div/a'
+driver.find_element(by=By.XPATH, value=btn2).click()
+
+
 
