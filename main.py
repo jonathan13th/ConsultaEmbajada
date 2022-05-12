@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
 import time
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+#logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 driver = webdriver.Chrome(executable_path = "drivers/chromedriver.exe")
 driver.get("https://ais.usvisa-info.com/es-co/niv/users/sign_in")
 user = driver.find_element(by=By.ID, value="user_email")
