@@ -28,6 +28,8 @@ driver.find_element(by=By.XPATH, value=btn).click()
 # driver.refresh()
 time.sleep(2)
 driver.find_element(by=By.ID, value='appointments_consulate_appointment_date').click()
+var11 = ""
+
 # var1 = '//table[@class="ui-datepicker-calendar"]//a'
 # dates = driver.find_elements(by=By.XPATH, value=var1)
 for i in range(0, 30):
@@ -44,24 +46,28 @@ for i in range(0, 30):
             var6 = date.text
             var7 = "-"
             var8 = driver.find_element(By.XPATH, value='/html/body/div[5]/div[1]/div/div/span[2]').text
-            var9 = "\n--------------------"
+            var9 = "\n--------------------\n"
             var10 = var3 + var4 + var5 + var6 + var7 + var8 + var9
             print(var10)
+            var11 = var11 + var10
         break
-        recipient = input("Prueba embajada:\n")  # receives mail address
-        message = input(var10)  # message to be send
-
-
-        def SendEmail(recipient, message):
-            server = smtplib.SMTP("smtp.gmail.com", 587)  # 587 = port number
-            server.ehlo()  # check the smtp connection
-            server.starttls()  # start the conection
-            server.login("jonathan13th@gmail.com", "Delisg0204*")
-            server.sendmail("csf1075@gmail.com", recipient, message)
-            server.close()
-
-
-        SendEmail(recipient, message)
     else:
         btn2 = '/html/body/div[5]/div[2]/div/a'
         driver.find_element(by=By.XPATH, value=btn2).click()
+
+
+def SendEmail(recipient, message):
+    server = smtplib.SMTP("smtp.gmail.com", 587)  # 587 = port number
+    server.ehlo()  # check the smtp connection
+    server.starttls()  # start the conection
+    server.login("pruebapython1994@gmail.com", "Nirvana1994**")
+    server.sendmail("pruebapython1994@gmail.com", recipient, message)
+    server.close()
+
+
+SUBJECT = "VISA: Fechas Disponibles"
+message = 'Subject: {}\n\n{}'.format(SUBJECT, var11)
+SendEmail("jonathan13th@gmail.com", message)
+# SendEmail("csf1075@gmail.com", message)
+
+driver.close()
